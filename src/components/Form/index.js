@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 
-//import './style.scss'
+import './style.scss'
 
 import { addEmployee } from '../../actions/listEmployees'
 
@@ -12,15 +12,21 @@ class Form extends Component {
 
   render() {
     return (
-      <form>
-        <ul>
-          <li><input type='text' placeholder='имя' ref='name'/></li>
-          <li><input type='text' placeholder='фамилия' ref='surname'/></li>
-          <li><input type='text' placeholder='отчество' ref='middleName'/></li>
-          <li><input type='e-mail' placeholder='e-mail' ref='email'/></li>
-          <li><input type='text' placeholder='навыки' ref='skills'/></li>
-        </ul>
-        <button type='submit' onClick={this.addClick}>Добавить</button>
+      <form className='form'>
+        <fieldset>
+          <legend>
+            Форма добавления сотрудника
+          </legend>
+          <ul className='form__list'>
+            <li><input className='form__input' type='text' placeholder='имя' ref='name'/></li>
+            <li><input className='form__input' type='text' placeholder='фамилия' ref='surname'/></li>
+            <li><input className='form__input' type='text' placeholder='отчество' ref='middleName'/></li>
+            <li><input className='form__input' type='e-mail' placeholder='e-mail' ref='email'/></li>
+            <li><input className='form__input' type='text' placeholder='навыки' ref='skills'/></li>
+          </ul>
+          <button className='form__submit' type='submit' onClick={this.addClick}>Добавить</button>
+        </fieldset>
+
       </form>
     )
   }

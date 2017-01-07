@@ -1,0 +1,19 @@
+.employee {
+  position: relative;
+
+  & span {
+    display: inline-block;
+    padding: 5px;
+  }
+
+  & input {
+    //width: 75px;
+  }
+
+  &__btn {
+    position: absolute;
+    right: -30px;
+    top: 0;
+    //float: right;
+  }
+}

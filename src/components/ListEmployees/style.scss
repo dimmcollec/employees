@@ -1,0 +1,28 @@
+.search {
+  padding: 4px 10px;
+  margin: 10px;
+}
+
+.employees {
+  width: 100%;
+
+  &__title {
+    text-align: center;
+    margin-bottom: 0;
+  }
+
+  &__list {
+    padding-left: 0;
+    list-style: none;
+  }
+
+  &__item:nth-child(odd){
+    background: #f5f5f5;
+  }
+
+  &__item {
+    padding: 10px;
+    padding-right: 40px;
+  }
+
+}

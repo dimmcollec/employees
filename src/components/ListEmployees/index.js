@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { doFilter } from '../../actions/filter'
-//import './style.scss'
+import './style.scss'
 
 import Employee from '../Emploee'
 
@@ -17,15 +17,16 @@ class ListEmployees extends Component {
     if (!employees) return null
     const list = employees.map((employee) => {
       return (
-        <li key={employee.id} >
+        <li className='employees__item' key={employee.id} >
           <Employee employee={employee} />
         </li>
         )
     })
     return (
-      <div>
-        <input type='text' placeholder='поиск' onChange={this.handleChange} ref='search'/>
-        <ul>
+      <div className='employees'>
+        <h2 className='employees__title'>Список сотрудников</h2>
+        <input className='search' type='text' placeholder='поиск' onChange={this.handleChange} ref='search'/>
+        <ul className='employees__list'>
           { list }
         </ul>
       </div>

@@ -1,10 +1,7 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
 import './style.scss'
 
 class App extends Component {
-  static propTypes = {
-
-  }
 
   render() {
     return (

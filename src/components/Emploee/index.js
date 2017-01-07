@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { deleteEmployee } from '../../actions/listEmployees'
 import { editEmployee, confirmEditEmployee } from '../../actions/editor'
-//import './style.scss'
+import './style.scss'
 
 class Employee extends Component {
   static propTypes = {
@@ -23,7 +23,6 @@ class Employee extends Component {
 
   componentDidMount() {
     const { editEmployee, employee } = this.props
-    const { name, surname, middleName, email, skills} = this.refs
 
     window.addEventListener('keydown', (ev) => {
       if (ev.keyCode === 13 || ev.keyCode === 27) {
@@ -36,7 +35,7 @@ class Employee extends Component {
     const { employee, editable, idEdit } = this.props
 
     return (
-      <div >
+      <div className='employee'>
         {(editable === 'name' && idEdit === employee.id)
           ? <input type='text' defaultValue={employee.name} onChange={this.changeHandle} data-name='name'/>
           : <span onClick={this.editHandle} data-name='name' >{ employee.name } </span>
@@ -57,7 +56,7 @@ class Employee extends Component {
           ? <input type='text' defaultValue={employee.skills} onChange={this.changeHandle} data-name='skills'/>
           : <span onClick={this.editHandle} data-name='skills'>{ employee.skills } </span>
         }
-        <button type='button' onClick={this.deleteHandle}>Удалить</button>
+        <button className='employee__btn' type='button' onClick={this.deleteHandle}>X</button>
       </div>
     )
   }
