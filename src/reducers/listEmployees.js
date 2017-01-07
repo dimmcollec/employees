@@ -1,6 +1,6 @@
 import * as types from '../constants'
 
-const initialState = JSON.parse(localStorage.getItem('employees'))
+const initialState = []
 
 export default function(state = initialState, action) {
   const { type, payload, generatedId } = action
@@ -8,13 +8,14 @@ export default function(state = initialState, action) {
   switch (type) {
 
     case types.ADD_EMPLOYEE:
+      const { name, surname, middleName, email, skills } = payload
       localStorage.setItem('employees', JSON.stringify([...state ].concat({
         id: generatedId,
-        name: payload.name,
-        surname: payload.surname,
-        middleName: payload.middleName,
-        email: payload.email,
-        skills: payload.skills
+        name,
+        surname,
+        middleName,
+        email,
+        skills
       })))
       return JSON.parse(localStorage.getItem('employees'))
 
