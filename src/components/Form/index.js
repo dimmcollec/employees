@@ -10,10 +10,6 @@ class Form extends Component {
     addEmployee: PropTypes.func
   }
 
-  state = {
-    isEmpty: true
-  }
-
   render() {
     return (
       <form>
@@ -21,10 +17,10 @@ class Form extends Component {
           <li><input type='text' placeholder='имя' ref='name'/></li>
           <li><input type='text' placeholder='фамилия' ref='surname'/></li>
           <li><input type='text' placeholder='отчество' ref='middleName'/></li>
-          <li><input type='text' placeholder='e-mail' ref='email'/></li>
+          <li><input type='e-mail' placeholder='e-mail' ref='email'/></li>
           <li><input type='text' placeholder='навыки' ref='skills'/></li>
         </ul>
-        <button type='submit' onClick={this.addClick}>добавить</button>
+        <button type='submit' onClick={this.addClick}>Добавить</button>
       </form>
     )
   }
@@ -32,6 +28,10 @@ class Form extends Component {
     ev.preventDefault()
     const { addEmployee } = this.props
     const { name, surname, middleName, email, skills} = this.refs
+    if(name.value === '' || surname.value === '' ||  middleName.value === '' ||  email.value === '' || skills.value === '') {
+      alert('заполните все поля')
+      return
+    }
     addEmployee(name.value, surname.value, middleName.value, email.value, skills.value)
     name.value = ''
     surname.value = ''

@@ -12,7 +12,7 @@ class IndexPage extends Component {
 
   render() {
     return (
-      <div>
+      <div className='container'>
         <Form />
         <ListEmployees />
       </div>

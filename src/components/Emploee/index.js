@@ -23,6 +23,8 @@ class Employee extends Component {
 
   componentDidMount() {
     const { editEmployee, employee } = this.props
+    const { name, surname, middleName, email, skills} = this.refs
+
     window.addEventListener('keydown', (ev) => {
       if (ev.keyCode === 13 || ev.keyCode === 27) {
         editEmployee('', employee.id)
@@ -36,20 +38,20 @@ class Employee extends Component {
     return (
       <div >
         {(editable === 'name' && idEdit === employee.id)
-          ? <input type='text' defaultValue={employee.name} onChange={this.changeHandle} data-name='name' required/>
-          : <span onClick={this.editHandle} data-name='name'>{ employee.name } </span>
+          ? <input type='text' defaultValue={employee.name} onChange={this.changeHandle} data-name='name'/>
+          : <span onClick={this.editHandle} data-name='name' >{ employee.name } </span>
         }
         {(editable === 'surname' && idEdit === employee.id)
           ? <input type='text' defaultValue={employee.surname} onChange={this.changeHandle} data-name='surname'/>
-          : <span onClick={this.editHandle} data-name='surname'>{ employee.surname } </span>
+          : <span onClick={this.editHandle} data-name='surname' >{ employee.surname } </span>
         }
         {(editable === 'middleName' && idEdit === employee.id)
           ? <input type='text' defaultValue={employee.middleName} onChange={this.changeHandle} data-name='middleName'/>
-          : <span onClick={this.editHandle} data-name='middleName'>{ employee.middleName } </span>
+          : <span onClick={this.editHandle} data-name='middleName' >{ employee.middleName } </span>
         }
         {(editable === 'email' && idEdit === employee.id)
           ? <input type='text' defaultValue={employee.email} onChange={this.changeHandle} data-name='email'/>
-          : <span onClick={this.editHandle} data-name='email'>{ employee.email } </span>
+          : <span onClick={this.editHandle} data-name='email' >{ employee.email } </span>
         }
         {(editable === 'skills' && idEdit === employee.id)
           ? <input type='text' defaultValue={employee.skills} onChange={this.changeHandle} data-name='skills'/>
