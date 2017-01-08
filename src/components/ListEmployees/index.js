@@ -45,9 +45,9 @@ export default connect( state => {
   }
 
   const filtered = state.listEmployees.filter( employee => {
-    const re = new RegExp (searchStr.toLocaleLowerCase(), 'g')
+    const re = new RegExp (searchStr.toLowerCase(), 'g')
 
-    let str = `${employee.name} ${employee.surname} ${employee.middleName} ${employee.email} ${employee.skills}`
+    const str = `${employee.name} ${employee.surname} ${employee.middleName} ${employee.email} ${employee.skills}`
 
     return (str.toLowerCase().match(re))
   })
