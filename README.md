@@ -7,3 +7,7 @@
   npm start
   localhost:8080
 ```
+
+![alt text](./screenshots/screenshot.png)
+
+![alt text](./screenshots/screenshot-2.png)

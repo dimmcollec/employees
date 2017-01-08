@@ -25,7 +25,9 @@ class ListEmployees extends Component {
     return (
       <div className='employees'>
         <h2 className='employees__title'>Список сотрудников</h2>
-        <input className='search' type='text' placeholder='поиск' onChange={this.handleChange} ref='search'/>
+        <form>
+          <input className='search' type='text' placeholder='поиск' onChange={this.handleChange} ref='search'/>
+        </form>
         <ul className='employees__list'>
           { list }
         </ul>
@@ -39,16 +41,12 @@ class ListEmployees extends Component {
 
 export default connect( state => {
 
-  const searchStr = state.filter.search
-  if (!searchStr) {
-    return { employees: state.listEmployees }
-  }
+  const search = state.filter.search
+  if (!search) return { employees: state.listEmployees }
 
   const filtered = state.listEmployees.filter( employee => {
-    const re = new RegExp (searchStr.toLowerCase(), 'g')
-
+    const re = new RegExp (search.toLowerCase(), 'g')
     const str = `${employee.name} ${employee.surname} ${employee.middleName} ${employee.email} ${employee.skills}`
-
     return (str.toLowerCase().match(re))
   })
 

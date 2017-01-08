@@ -15,8 +15,6 @@ class IndexPage extends Component {
       </div>
     )
   }
-
-
 }
 
 export default IndexPage

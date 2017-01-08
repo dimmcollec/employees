@@ -18,26 +18,23 @@ class Form extends Component {
             Форма добавления сотрудника
           </legend>
           <ul className='form__list'>
-            <li><input className='form__input' type='text' placeholder='имя' ref='name'/></li>
-            <li><input className='form__input' type='text' placeholder='фамилия' ref='surname'/></li>
-            <li><input className='form__input' type='text' placeholder='отчество' ref='middleName'/></li>
-            <li><input className='form__input' type='e-mail' placeholder='e-mail' ref='email'/></li>
-            <li><input className='form__input' type='text' placeholder='навыки' ref='skills'/></li>
+            <li><input className='form__input' type='text' placeholder='имя' ref='name' required/></li>
+            <li><input className='form__input' type='text' placeholder='фамилия' ref='surname' required/></li>
+            <li><input className='form__input' type='text' placeholder='отчество' ref='middleName' required/></li>
+            <li><input className='form__input' type='e-mail' placeholder='e-mail' ref='email' required/></li>
+            <li><input className='form__input' type='text' placeholder='навыки' ref='skills' required/></li>
           </ul>
-          <button className='form__submit' type='submit' onClick={this.addClick}>Добавить</button>
+          <button className='form__submit' type='submit' onClick={this.addHandle}>Добавить</button>
         </fieldset>
-
       </form>
     )
   }
-  addClick = ev => {
-    ev.preventDefault()
+  addHandle = ev => {
     const { addEmployee } = this.props
     const { name, surname, middleName, email, skills} = this.refs
-    if(name.value === '' || surname.value === '' ||  middleName.value === '' ||  email.value === '' || skills.value === '') {
-      alert('заполните все поля')
-      return
-    }
+    if(name.value === '' || surname.value === '' ||  middleName.value === '' ||  email.value === '' || skills.value === '') return
+
+    ev.preventDefault()
     addEmployee(name.value, surname.value, middleName.value, email.value, skills.value)
     name.value = ''
     surname.value = ''
