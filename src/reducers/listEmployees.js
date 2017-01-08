@@ -1,26 +1,4 @@
 import * as types from '../constants'
-// удалить ---------------------- начало
-// const employees =  [
-//   {
-//     id: 12313,
-//     name: 'Иван',
-//     surname: 'Степнов',
-//     middleName: 'Степанович',
-//     email: 'ma@ya.ru',
-//     skills: 'Умею копать'
-//   },
-//   {
-//     id: 1234234,
-//     name: 'Василий',
-//     surname: 'Петров',
-//     middleName: 'Петрович',
-//     email: 'mar@ya.ru',
-//     skills: 'Умею не копать'
-//   }
-// ]
-// localStorage.setItem('employees', JSON.stringify(employees))
-// const initialState = JSON.parse(localStorage.getItem('employees'))
-//удалить ---------------------- конец
 
 const initialState = []
 
