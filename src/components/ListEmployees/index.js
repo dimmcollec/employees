@@ -15,6 +15,7 @@ class ListEmployees extends Component {
     const { employees } = this.props
 
     if (!employees) return null
+
     const list = employees.map((employee) => {
       return (
         <li className='employees__item' key={employee.id} >

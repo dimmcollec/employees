@@ -1,9 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
-
-import './style.scss'
-
 import { addEmployee } from '../../actions/listEmployees'
+import './style.scss'
 
 class Form extends Component {
   static propTypes = {
